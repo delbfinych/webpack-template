@@ -1,0 +1,8 @@
+//-
+  options.href - адрес
+  options.name - имя ссылки
+  
+mixin link(options)
+   - options = options || {href: "/", name: "go home"}
+   a.link(href=options.href)= options.name
+    

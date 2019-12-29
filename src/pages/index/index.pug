@@ -1,0 +1,19 @@
+include ../../components/menu/menu
+
+doctype html
+html
+  head
+    meta(charset = 'utf-8')
+    meta(name='viewport', content="initial-scale=1.0, width=device-width")
+    title
+      block title
+  body
+    include ../../components/header/header
+    h1 HOME PAGE
+    +menu([
+      {href:'/', name: 'HOME'},
+      {href:'/first.html', name: 'FIRST'}, 
+      {href: 'second.html', name: 'SECOND'}
+      ])
+    include ../../components/footer/footer
+    block scripts

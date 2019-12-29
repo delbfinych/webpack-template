@@ -1,0 +1,14 @@
+include ../link/link
+
+//-
+  options - массив ссылок
+  options[0].href - адрес
+  options[0].name - имя ссылки
+  
+mixin menu(options)
+  - options = options || []
+
+  .menu
+    nav.menu__list
+      for item in options
+        +link({href: item.href, name: item.name})
