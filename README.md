@@ -27,6 +27,7 @@ src
 ```
 pages
 └─── first
+| |  first.pug
 | |  first.js
 | |  first.scss
 └─── index
