@@ -114,6 +114,5 @@ module.exports = {
       logo: `${PATHS.src}/theme/favicon.ico`,
       prefix: 'static/'
     }),
-    // new FaviconsWebpackPlugin(`${PATHS.src}/theme/favicon.ico`),
   ],
 };
