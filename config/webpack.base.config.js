@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
 const PATHS = {
   src: path.join(__dirname, '..', 'src'),
   dist: path.join(__dirname, '..', 'dist'),
@@ -20,6 +19,7 @@ module.exports = {
   output: {
     filename: path.join(PATHS.static, 'js', '[name].[chunkhash].js'),
     path: PATHS.dist,
+    publicPath: '/',
   },
   optimization: {
     splitChunks: {
@@ -76,14 +76,16 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
-          name: path.join(`${PATHS.static}`, 'fonts', '[name].[ext]'),
+          name: '[name].[ext]',
+          outputPath: `${PATHS.static}/fonts`,
         },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: path.join(`${PATHS.static}`, 'media', '[name].[ext]'),
+          name: '[name].[ext]',
+          outputPath: `${PATHS.static}/media`,
         },
       },
       {
@@ -112,7 +114,12 @@ module.exports = {
     ),
     new FaviconsWebpackPlugin({
       logo: `${PATHS.src}/theme/favicon.ico`,
-      prefix: 'static/'
+      prefix: 'static/',
     }),
   ],
+  resolve: {
+    alias: {
+      // put your aliases here
+    },
+  },
 };
