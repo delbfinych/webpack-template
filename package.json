@@ -2,7 +2,7 @@
   "name": "webpack_config",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --open  --config config/webpack.dev.config",
     "build": "webpack  --config config/webpack.prod.config.js"
@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
-    "date-fns": "^2.8.1",
     "normalize.css": "^8.0.1"
   }
 }
